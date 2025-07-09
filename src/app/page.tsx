@@ -723,7 +723,7 @@ export default function App() {
               <ul className="space-y-3">
                 <li>
                   <p className="text-gray-400 hover:text-white transition-colors duration-200">
-                    079-405-2038
+                    (079)-405-2038
                   </p>
                 </li>
                 <li>
