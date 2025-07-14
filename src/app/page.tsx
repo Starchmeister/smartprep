@@ -510,11 +510,14 @@ export default function App() {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <img
-                src="/120shots_so.png"
-                alt="Tutoring platform dashboard"
-                className="rounded-3xl shadow-2xl border border-[#E6F0FF]"
-              />
+            <Image
+            src="/120shots_so.png"
+            alt="Tutoring platform dashboard"
+            width={200}
+            height={80}
+            priority
+            className="rounded-3xl shadow-2xl border border-[#E6F0FF]"
+          />
             </div>
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
