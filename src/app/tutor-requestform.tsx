@@ -66,7 +66,7 @@ export default function App() {
               href="#"
               className="bg-[#6991B4] text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-[#254465] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D0AB2C]"
             >
-              Log In
+              Login
             </a>
           </nav>
 
