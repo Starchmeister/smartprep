@@ -195,12 +195,12 @@ const LoginModal: FC<LoginModalProps> = ({ isOpen, onClose }) => {
               className=""
             >
               <button className="w-full py-3 border-2 border-[#254465] text-[#254465] rounded-full font-semibold hover:bg-[#254465] hover:text-white transition-colors duration-300">
-                Private Tutoring
+                Tutor Login
               </button>
             </a>
-            <a href="https://learn.smartprep.co.za" className=""></a>
+            <a href="https://secure.tutorcruncher.com/smartprep/login/" className=""></a>
             <button className="w-full py-3 border-2 border-[#254465] text-[#254465] rounded-full font-semibold hover:bg-[#254465] hover:text-white transition-colors duration-300">
-              Classes Platform
+              Client Login
             </button>
           </div>
         </div>
@@ -331,7 +331,7 @@ export default function App() {
                 View Classes
               </a>
               <a
-                href="https://secure.tutorcruncher.com/smartprep/signup/client/"
+                href="https://smartprep.co.za/tutor-requestform.tsx"
                 className="bg-white text-[#6991B4] px-10 py-5 rounded-full font-bold text-xl hover:bg-[#E6F0FF] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 w-full sm:w-auto border-2 border-[#D0AB2C] focus:outline-none focus:ring-2 focus:ring-[#D0AB2C]"
               >
                 Request a Tutor <ArrowRight size={22} />
@@ -376,7 +376,7 @@ export default function App() {
                   />
                 </div>
                 <a
-                  href="https://secure.tutorcruncher.com/smartprep/signup/client/"
+                  href="https://smartprep.co.za/tutor-requestform.tsx"
                   className="mt-12 inline-block bg-[#6991B4] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#254465] transition-colors duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D0AB2C]"
                 >
                   Request a Tutor
@@ -499,8 +499,7 @@ export default function App() {
                 classes!
                 <br />
                 <span className="italic mt-3 block">
-                  SmartPrep is not affiliated with any institution; all classes
-                  and tutoring are private in nature.
+                  SmartPrep supports CAPS, IEB, IB, Cambridge (IGCSE and A/A-Levels) and other curriculums, and provides support to various tertiary institutions across South Africa.
                 </span>
               </p>
             </div>
@@ -540,7 +539,7 @@ export default function App() {
                 </li>
               </ul>
               <a
-                href="https://secure.tutorcruncher.com/smartprep/signup/client/"
+                href="https://smartprep.co.za/tutor-requestform.tsx"
                 className="mt-12 inline-block bg-[#6991B4] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#254465] transition-colors duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D0AB2C]"
               >
                 Request a Tutor
@@ -550,37 +549,77 @@ export default function App() {
         </section>
 
         {/* --- FAQ Section --- */}
-        <section className="py-24">
-          <div className="container mx-auto px-8 max-w-4xl">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-                Frequently Asked Questions
-              </h2>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
-              <FaqItem
-                question="1. Do you offer both online and in-person tutoring?"
-                answer="Yes, we provide both online and in-person tutoring. Our in-person sessions are available across major cities, and online tutoring is available to students anywhere in South Africa and beyond."
-              />
-              <FaqItem
-                question="2. What subjects do you offer tutoring for?"
-                answer="We cover a vast range of subjects for all school grades (CAPS, IEB, Cambridge) and all major South African universities. From high school mathematics to university-level engineering, we have an expert for you."
-              />
-              <FaqItem
-                question="3. How do I sign up for tutoring services?"
-                answer="Simply click on the 'Request a Tutor' button, fill out the form with your requirements, and our team will get in touch with you within 24 hours to finalize your perfect tutor match."
-              />
-              <FaqItem
-                question="4. How do I pay for the tutoring sessions?"
-                answer="Payments are made securely online through our platform. We accept various payment methods, including credit/debit cards and EFT. You can choose from various packages to suit your needs."
-              />
-              <FaqItem
-                question="5. Do you offer group tutoring?"
-                answer="Yes, we offer both individual and group tutoring sessions. Group sessions are a cost-effective way to learn with peers while still receiving expert guidance."
-              />
-            </div>
-          </div>
-        </section>
+<section className="py-24">
+  <div className="container mx-auto px-8 max-w-4xl">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+        Frequently Asked Questions
+      </h2>
+    </div>
+    <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
+      <FaqItem
+        question="1. What tutoring services does SmartPrep offer?"
+        answer="We offer one-on-one private tutoring, group tutoring, exam prep workshops, and online courses for both high school and university students across a wide range of subjects."
+      />
+      <FaqItem
+        question="2. What subjects and levels do you cover?"
+        answer="We cover all major subjects from Grades R–12 (CAPS, IEB, Cambridge) and university-level subjects across commerce, science, engineering, and humanities. If you're unsure, just ask—we likely have a tutor for it."
+      />
+      <FaqItem
+        question="3. Is tutoring available online and in person?"
+        answer="Yes. Online tutoring is available nationwide and internationally. In-person tutoring is available in all major cities including Cape Town, Johannesburg, Pretoria, and Durban."
+      />
+      <FaqItem
+        question="4. What are the benefits of using SmartPrep instead of finding a tutor directly?"
+        answer="We rigorously vet all tutors, offer flexible scheduling, secure payment options, and support if you need to switch tutors. Plus, our team ensures the entire process is hassle-free and aligned with your learning goals."
+      />
+      <FaqItem
+        question="5. How much does tutoring cost?"
+        answer="Rates vary by level and subject, but we offer competitive pricing. Group sessions offer the best cost-per-student rate, and we have bulk and monthly packages for added savings."
+      />
+      <FaqItem
+        question="6. What’s the cost-benefit analysis of tutoring?"
+        answer="Tutoring leads to improved grades, deeper understanding, and confidence—saving time and boosting future opportunities like scholarships, university admission, or job offers. It's an investment in long-term success."
+      />
+      <FaqItem
+        question="7. How do I sign up for tutoring?"
+        answer="Click the 'Request a Tutor' button, fill in your learning needs, and our team will get back to you within 24 hours with a tailored match and next steps."
+      />
+      <FaqItem
+        question="8. Can I request a specific tutor?"
+        answer="Yes, if you have a preferred tutor from our team, we’ll do our best to match you. If they’re unavailable, we’ll recommend a similar expert."
+      />
+      <FaqItem
+        question="9. What if I’m not happy with my tutor?"
+        answer="No problem! Let us know, and we’ll rematch you at no additional cost. Your satisfaction and progress are our top priorities."
+      />
+      <FaqItem
+        question="10. What is your refund policy?"
+        answer="We offer pro-rata refunds for unused sessions within 7 days of purchase. For ongoing packages, we can pause or transfer credits as needed. Terms apply—please contact support for full details."
+      />
+      <FaqItem
+        question="11. Do you offer support for special learning needs?"
+        answer="Yes, we have experienced tutors trained to work with learners who have ADHD, dyslexia, and other learning needs. Just mention this during sign-up so we can match accordingly."
+      />
+      <FaqItem
+        question="12. Are your tutors qualified?"
+        answer="All SmartPrep tutors have achieved a minimum of 75% in the subject they teach or hold an honours degree. They also go through a thorough vetting and onboarding process."
+      />
+      <FaqItem
+        question="13. How are tutoring sessions scheduled?"
+        answer="Sessions are scheduled based on your availability and the tutor’s. We offer flexible booking and rescheduling via email or WhatsApp support."
+      />
+      <FaqItem
+        question="14. How do I make payment?"
+        answer="You can pay securely online via card, EFT, or SnapScan. We’ll invoice you once your sessions are confirmed, and you’ll receive reminders before each session."
+      />
+      <FaqItem
+        question="15. Do you offer discounts or sponsorships?"
+        answer="Yes. We offer discounts for group sessions, multi-session packages, and we also partner with bursaries and sponsors to support students financially. Contact us to find out if you're eligible."
+      />
+    </div>
+  </div>
+</section>
 
         {/* --- Partners Section --- */}
         <section className="py-24 bg-white">
@@ -702,7 +741,7 @@ export default function App() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="https://docs.google.com/document/d/1as3s_YXUPAqPVtLBoc8MSeh6URklcf3scFhyACl6bTM/edit?usp=sharing"
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     Terms and Conditions
@@ -710,7 +749,7 @@ export default function App() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://docs.google.com/document/d/1ulmwuvPeqt48SfvS6mjvCaYQRvOWWSemRr4d3KXJskQ/edit?usp=sharing"
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     Privacy Policy
