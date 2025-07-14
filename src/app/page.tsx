@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   ChevronDown,
   ChevronRight,
@@ -16,6 +16,8 @@ import {
   Facebook,
 } from "lucide-react";
 import Image from "next/image";
+import TeachWithUsModal from "@/components/TeachWithUsModal";
+import LoginModal from "@/components/LoginModal";
 
 interface StatItemProps {
   value: string | number; // or more specific types if needed
@@ -31,15 +33,6 @@ interface HowItWorksStepProps {
 interface FaqItemProps {
   question: string;
   answer: string;
-}
-
-interface TeachWithUsModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-interface LoginModalProps {
-  isOpen: boolean;
-  onClose: () => void;
 }
 
 // Helper component for Stat items
@@ -90,121 +83,6 @@ const FaqItem = ({ question, answer }: FaqItemProps) => {
           <p>{answer}</p>
         </div>
       )}
-    </div>
-  );
-};
-
-// Existing TeachWithUs Modal Component
-const TeachWithUsModal: FC<TeachWithUsModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 bg-[#00000066] flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-3xl shadow-lg w-full max-w-2xl flex relative overflow-hidden">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none"
-          aria-label="Close modal"
-        >
-          <X size={24} />
-        </button>
-
-        {/* Left Section - Sign up as */}
-        <div className="w-1/2 p-8 flex flex-col justify-center items-center text-center">
-          <h3 className="text-2xl font-bold text-gray-800 mb-8">Sign up as</h3>
-          <div className="flex flex-col gap-5 w-full max-w-[200px]">
-            {" "}
-            {/* Changed here */}
-            <a
-              href="https://secure.tutorcruncher.com/smartprep/signup/tutor/"
-              className="w-full" // Added w-full here
-            >
-              <button className="w-full py-3 border-2 border-[#254465] text-[#254465] rounded-full font-semibold hover:bg-[#254465] hover:text-white transition-colors duration-300">
-                Tutor
-              </button>
-            </a>
-            <a
-              href="https://secure.tutorcruncher.com/smartprep/signup/tutor/"
-              className="w-full" // Added w-full here
-            >
-              <button className="w-full py-3 border-2 border-[#254465] text-[#254465] rounded-full font-semibold hover:bg-[#254465] hover:text-white transition-colors duration-300">
-                Instructor
-              </button>
-            </a>
-          </div>
-        </div>
-
-        {/* Right Section - SmartPrep branding */}
-        <div className="w-1/2 bg-[#E6F0FF] p-8 flex flex-col justify-center items-center text-center">
-          <Image
-            src="/SP.png"
-            alt="SmartPrep Logo"
-            width={200}
-            height={80}
-            priority
-            className="mx-auto mb-4"
-          />
-          <p className="text-gray-600 text-lg font-medium">Teach with us</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// NEW Login Modal Component
-const LoginModal: FC<LoginModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 bg-[#00000066] flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-3xl shadow-lg w-full max-w-2xl flex relative overflow-hidden">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none"
-          aria-label="Close modal"
-        >
-          <X size={24} />
-        </button>
-
-        {/* Left Section - SmartPrep branding (reversed from TeachWithUs) */}
-        <div className="w-1/2 bg-[#E6F0FF] p-8 flex flex-col justify-center items-center text-center">
-          <Image
-            src="/SP.png"
-            alt="SmartPrep Logo"
-            width={200}
-            height={80}
-            priority
-            className="mx-auto mb-2"
-          />
-          <p className="text-gray-800 text-base font-semibold">
-            All-in-one Learning Platform
-          </p>
-          <p className="text-gray-600 text-lg font-medium mt-4">
-            Welcome back!
-          </p>
-        </div>
-
-        {/* Right Section - Login options */}
-        <div className="w-1/2 p-8 flex flex-col justify-center items-center text-center">
-          <h3 className="text-2xl font-bold text-gray-800 mb-8">Login</h3>
-          <div className="flex flex-col gap-5 w-full max-w-[200px]">
-            <a
-              href="https://secure.tutorcruncher.com/smartprep/login"
-              className=""
-            >
-              <button className="w-full py-3 border-2 border-[#254465] text-[#254465] rounded-full font-semibold hover:bg-[#254465] hover:text-white transition-colors duration-300">
-                Tutor Login
-              </button>
-            </a>
-            <a href="https://secure.tutorcruncher.com/smartprep/login/" className=""></a>
-            <button className="w-full py-3 border-2 border-[#254465] text-[#254465] rounded-full font-semibold hover:bg-[#254465] hover:text-white transition-colors duration-300">
-              Client Login
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
@@ -331,7 +209,7 @@ export default function App() {
                 View Classes
               </a>
               <a
-                href="https://smartprep.co.za/tutor-requestform.tsx"
+                href="/tutor-request-form"
                 className="bg-white text-[#6991B4] px-10 py-5 rounded-full font-bold text-xl hover:bg-[#E6F0FF] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 w-full sm:w-auto border-2 border-[#D0AB2C] focus:outline-none focus:ring-2 focus:ring-[#D0AB2C]"
               >
                 Request a Tutor <ArrowRight size={22} />
@@ -499,7 +377,9 @@ export default function App() {
                 classes!
                 <br />
                 <span className="italic mt-3 block">
-                  SmartPrep supports CAPS, IEB, IB, Cambridge (IGCSE and A/A-Levels) and other curriculums, and provides support to various tertiary institutions across South Africa.
+                  SmartPrep supports CAPS, IEB, IB, Cambridge (IGCSE and
+                  A/A-Levels) and other curriculums, and provides support to
+                  various tertiary institutions across South Africa.
                 </span>
               </p>
             </div>
@@ -510,14 +390,14 @@ export default function App() {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
             <div>
-            <Image
-            src="/120shots_so.png"
-            alt="Tutoring platform dashboard"
-            width={200}
-            height={80}
-            priority
-            className="rounded-3xl shadow-2xl border border-[#E6F0FF]"
-          />
+              <Image
+                src="/120shots_so.png"
+                alt="Tutoring platform dashboard"
+                width={200}
+                height={80}
+                priority
+                className="rounded-3xl shadow-2xl border border-[#E6F0FF]"
+              />
             </div>
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
@@ -552,77 +432,77 @@ export default function App() {
         </section>
 
         {/* --- FAQ Section --- */}
-<section className="py-24">
-  <div className="container mx-auto px-8 max-w-4xl">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-        Frequently Asked Questions
-      </h2>
-    </div>
-    <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
-      <FaqItem
-        question="1. What tutoring services does SmartPrep offer?"
-        answer="We offer one-on-one private tutoring, group tutoring, exam prep workshops, and online courses for both high school and university students across a wide range of subjects."
-      />
-      <FaqItem
-        question="2. What subjects and levels do you cover?"
-        answer="We cover all major subjects from Grades R–12 (CAPS, IEB, Cambridge) and university-level subjects across commerce, science, engineering, and humanities. If you're unsure, just ask—we likely have a tutor for it."
-      />
-      <FaqItem
-        question="3. Is tutoring available online and in person?"
-        answer="Yes. Online tutoring is available nationwide and internationally. In-person tutoring is available in all major cities including Cape Town, Johannesburg, Pretoria, and Durban."
-      />
-      <FaqItem
-        question="4. What are the benefits of using SmartPrep instead of finding a tutor directly?"
-        answer="We rigorously vet all tutors, offer flexible scheduling, secure payment options, and support if you need to switch tutors. Plus, our team ensures the entire process is hassle-free and aligned with your learning goals."
-      />
-      <FaqItem
-        question="5. How much does tutoring cost?"
-        answer="Rates vary by level and subject, but we offer competitive pricing. Group sessions offer the best cost-per-student rate, and we have bulk and monthly packages for added savings."
-      />
-      <FaqItem
-        question="6. What’s the cost-benefit analysis of tutoring?"
-        answer="Tutoring leads to improved grades, deeper understanding, and confidence—saving time and boosting future opportunities like scholarships, university admission, or job offers. It's an investment in long-term success."
-      />
-      <FaqItem
-        question="7. How do I sign up for tutoring?"
-        answer="Click the 'Request a Tutor' button, fill in your learning needs, and our team will get back to you within 24 hours with a tailored match and next steps."
-      />
-      <FaqItem
-        question="8. Can I request a specific tutor?"
-        answer="Yes, if you have a preferred tutor from our team, we’ll do our best to match you. If they’re unavailable, we’ll recommend a similar expert."
-      />
-      <FaqItem
-        question="9. What if I’m not happy with my tutor?"
-        answer="No problem! Let us know, and we’ll rematch you at no additional cost. Your satisfaction and progress are our top priorities."
-      />
-      <FaqItem
-        question="10. What is your refund policy?"
-        answer="We offer pro-rata refunds for unused sessions within 7 days of purchase. For ongoing packages, we can pause or transfer credits as needed. Terms apply—please contact support for full details."
-      />
-      <FaqItem
-        question="11. Do you offer support for special learning needs?"
-        answer="Yes, we have experienced tutors trained to work with learners who have ADHD, dyslexia, and other learning needs. Just mention this during sign-up so we can match accordingly."
-      />
-      <FaqItem
-        question="12. Are your tutors qualified?"
-        answer="All SmartPrep tutors have achieved a minimum of 75% in the subject they teach or hold an honours degree. They also go through a thorough vetting and onboarding process."
-      />
-      <FaqItem
-        question="13. How are tutoring sessions scheduled?"
-        answer="Sessions are scheduled based on your availability and the tutor’s. We offer flexible booking and rescheduling via email or WhatsApp support."
-      />
-      <FaqItem
-        question="14. How do I make payment?"
-        answer="You can pay securely online via card, EFT, or SnapScan. We’ll invoice you once your sessions are confirmed, and you’ll receive reminders before each session."
-      />
-      <FaqItem
-        question="15. Do you offer discounts or sponsorships?"
-        answer="Yes. We offer discounts for group sessions, multi-session packages, and we also partner with bursaries and sponsors to support students financially. Contact us to find out if you're eligible."
-      />
-    </div>
-  </div>
-</section>
+        <section className="py-24">
+          <div className="container mx-auto px-8 max-w-4xl">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
+              <FaqItem
+                question="1. What tutoring services does SmartPrep offer?"
+                answer="We offer one-on-one private tutoring, group tutoring, exam prep workshops, and online courses for both high school and university students across a wide range of subjects."
+              />
+              <FaqItem
+                question="2. What subjects and levels do you cover?"
+                answer="We cover all major subjects from Grades R–12 (CAPS, IEB, Cambridge) and university-level subjects across commerce, science, engineering, and humanities. If you're unsure, just ask—we likely have a tutor for it."
+              />
+              <FaqItem
+                question="3. Is tutoring available online and in person?"
+                answer="Yes. Online tutoring is available nationwide and internationally. In-person tutoring is available in all major cities including Cape Town, Johannesburg, Pretoria, and Durban."
+              />
+              <FaqItem
+                question="4. What are the benefits of using SmartPrep instead of finding a tutor directly?"
+                answer="We rigorously vet all tutors, offer flexible scheduling, secure payment options, and support if you need to switch tutors. Plus, our team ensures the entire process is hassle-free and aligned with your learning goals."
+              />
+              <FaqItem
+                question="5. How much does tutoring cost?"
+                answer="Rates vary by level and subject, but we offer competitive pricing. Group sessions offer the best cost-per-student rate, and we have bulk and monthly packages for added savings."
+              />
+              <FaqItem
+                question="6. What’s the cost-benefit analysis of tutoring?"
+                answer="Tutoring leads to improved grades, deeper understanding, and confidence—saving time and boosting future opportunities like scholarships, university admission, or job offers. It's an investment in long-term success."
+              />
+              <FaqItem
+                question="7. How do I sign up for tutoring?"
+                answer="Click the 'Request a Tutor' button, fill in your learning needs, and our team will get back to you within 24 hours with a tailored match and next steps."
+              />
+              <FaqItem
+                question="8. Can I request a specific tutor?"
+                answer="Yes, if you have a preferred tutor from our team, we’ll do our best to match you. If they’re unavailable, we’ll recommend a similar expert."
+              />
+              <FaqItem
+                question="9. What if I’m not happy with my tutor?"
+                answer="No problem! Let us know, and we’ll rematch you at no additional cost. Your satisfaction and progress are our top priorities."
+              />
+              <FaqItem
+                question="10. What is your refund policy?"
+                answer="We offer pro-rata refunds for unused sessions within 7 days of purchase. For ongoing packages, we can pause or transfer credits as needed. Terms apply—please contact support for full details."
+              />
+              <FaqItem
+                question="11. Do you offer support for special learning needs?"
+                answer="Yes, we have experienced tutors trained to work with learners who have ADHD, dyslexia, and other learning needs. Just mention this during sign-up so we can match accordingly."
+              />
+              <FaqItem
+                question="12. Are your tutors qualified?"
+                answer="All SmartPrep tutors have achieved a minimum of 75% in the subject they teach or hold an honours degree. They also go through a thorough vetting and onboarding process."
+              />
+              <FaqItem
+                question="13. How are tutoring sessions scheduled?"
+                answer="Sessions are scheduled based on your availability and the tutor’s. We offer flexible booking and rescheduling via email or WhatsApp support."
+              />
+              <FaqItem
+                question="14. How do I make payment?"
+                answer="You can pay securely online via card, EFT, or SnapScan. We’ll invoice you once your sessions are confirmed, and you’ll receive reminders before each session."
+              />
+              <FaqItem
+                question="15. Do you offer discounts or sponsorships?"
+                answer="Yes. We offer discounts for group sessions, multi-session packages, and we also partner with bursaries and sponsors to support students financially. Contact us to find out if you're eligible."
+              />
+            </div>
+          </div>
+        </section>
 
         {/* --- Partners Section --- */}
         <section className="py-24 bg-white">
@@ -790,7 +670,6 @@ export default function App() {
         onClose={() => setIsTeachModalOpen(false)}
       />
 
-      {/* NEW Login Modal */}
       <LoginModal
         isOpen={isLoginModalOpen}
         onClose={() => setIsLoginModalOpen(false)}
