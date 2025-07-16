@@ -18,6 +18,7 @@ import {
 import Image from "next/image";
 import TeachWithUsModal from "@/components/TeachWithUsModal";
 import LoginModal from "@/components/LoginModal";
+import Link from "next/link";
 
 interface StatItemProps {
   value: string | number; // or more specific types if needed
@@ -118,7 +119,7 @@ export default function App() {
       {/* --- Header --- */}
       <header className="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-8 py-5 flex justify-between items-center">
-          <a href="#" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3">
             <div>
               <Image
                 src="/SP.png"
@@ -129,27 +130,26 @@ export default function App() {
                 className="mx-auto"
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={link.onClick}
                 className="text-lg text-gray-700 hover:text-[#6991B4] transition-colors duration-300 font-medium"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#"
+            <button
               onClick={() => setIsLoginModalOpen(true)} // Modified onClick for Login button
               className="bg-[#6991B4] text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-[#254465] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D0AB2C]"
             >
               Log In
-            </a>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -177,13 +177,12 @@ export default function App() {
                   {link.name}
                 </a>
               ))}
-              <a
-                href="#"
+              <button
                 onClick={() => setIsLoginModalOpen(true)} // Modified onClick for Login button in mobile menu
                 className="bg-[#6991B4] text-white text-center px-6 py-3 rounded-full hover:bg-[#254465] transition-all duration-300 shadow-md"
               >
                 Log In
-              </a>
+              </button>
             </div>
           </div>
         )}
@@ -254,7 +253,7 @@ export default function App() {
                   />
                 </div>
                 <a
-                  href="https://smartprep.co.za/tutor-requestform.tsx"
+                  href="/tutor-request-form"
                   className="mt-12 inline-block bg-[#6991B4] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#254465] transition-colors duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D0AB2C]"
                 >
                   Request a Tutor
@@ -422,7 +421,7 @@ export default function App() {
                 </li>
               </ul>
               <a
-                href="https://smartprep.co.za/tutor-requestform.tsx"
+                href="/tutor-request-form"
                 className="mt-12 inline-block bg-[#6991B4] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#254465] transition-colors duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D0AB2C]"
               >
                 Request a Tutor

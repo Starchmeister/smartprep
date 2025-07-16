@@ -5,6 +5,7 @@ import { Menu, X, Instagram, Linkedin, Facebook } from "lucide-react";
 import Image from "next/image";
 import TeachWithUsModal from "@/components/TeachWithUsModal";
 import LoginModal from "@/components/LoginModal";
+import Link from "next/link";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ export default function App() {
       {/* --- Header --- */}
       <header className="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-8 py-5 flex justify-between items-center">
-          <a href="#" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3">
             <Image
               src="/SP.png"
               alt="SmartPrep Logo"
@@ -45,7 +46,7 @@ export default function App() {
               priority
               className="mx-auto"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
