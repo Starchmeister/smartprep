@@ -388,14 +388,14 @@ export default function App() {
         {/* --- Private Tutoring Showcase --- */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="w-full h-[400px] relative">
+              {/* Increased height and made container relative */}
               <Image
                 src="/120shots_so.png"
                 alt="Tutoring platform dashboard"
-                width={200}
-                height={80}
+                fill
+                className="rounded-3xl shadow-2xl border border-[#E6F0FF] object-cover" // Changed to object-cover
                 priority
-                className="rounded-3xl shadow-2xl border border-[#E6F0FF]"
               />
             </div>
             <div>
@@ -563,6 +563,18 @@ export default function App() {
                   priority
                   className="mx-auto"
                 />
+              </div>
+              <div>
+                <Link href="/tutors-exams-sa">
+                  <Image
+                    src="/tutors.png"
+                    alt="SmartPrep Logo"
+                    width={120}
+                    height={52}
+                    priority
+                    className="mx-auto"
+                  />
+                </Link>
               </div>
             </div>
           </div>
