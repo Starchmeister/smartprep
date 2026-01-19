@@ -2,7 +2,6 @@
 
 import React, { useRef, useState } from "react";
 import {
-  ChevronDown,
   Menu,
   X,
   Instagram,
@@ -12,28 +11,9 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-interface StatItemProps {
-  value: string | number;
-  label: string;
-}
-
-interface HowItWorksStepProps {
-  number: number | string;
-  title: string;
-  description: string;
-}
-
-interface FaqItemProps {
-  question: string;
-  answer: string;
-}
-
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const footerRef = useRef<HTMLElement>(null);
-
-  const scrollToFooter = () =>
-    footerRef.current?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <div className="bg-gray-50 font-sans antialiased">
