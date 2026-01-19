@@ -614,7 +614,7 @@ export default function App() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="https://secure.tutorcruncher.com/smartprep/signup/client/"
+                    href="https://secure.tutorcruncher.com/smartprep-cape-town-tutors/signup/tutor/"
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     Live Classes
@@ -656,7 +656,7 @@ export default function App() {
               <ul className="space-y-3">
                 <li>
                   <p className="text-gray-400 hover:text-white transition-colors duration-200">
-                    (079)-405-2038
+                    +27 73 895 9293
                   </p>
                 </li>
                 <li>
