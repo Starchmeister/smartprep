@@ -3,12 +3,6 @@
 import React, { useRef, useState } from "react";
 import {
   ChevronDown,
-  ChevronRight,
-  GraduationCap,
-  PlayCircle,
-  Users,
-  Star,
-  ArrowRight,
   Menu,
   X,
   Instagram,
@@ -33,50 +27,6 @@ interface FaqItemProps {
   question: string;
   answer: string;
 }
-
-const StatItem = ({ value, label }: StatItemProps) => (
-  <div className="text-center">
-    <p className="text-5xl md:text-6xl font-bold text-[#6991B4]">{value}</p>
-    <p className="text-base md:text-lg text-gray-700 mt-3">{label}</p>
-  </div>
-);
-
-const HowItWorksStep = ({
-  number,
-  title,
-  description,
-}: HowItWorksStepProps) => (
-  <div className="flex items-start">
-    <div className="flex-shrink-0">
-      <div className="w-12 h-12 bg-[#E6F0FF] text-[#6991B4] rounded-full flex items-center justify-center font-bold text-xl shadow-sm">
-        {number}
-      </div>
-    </div>
-    <div className="ml-5">
-      <h4 className="text-xl font-semibold text-gray-800">{title}</h4>
-      <p className="text-gray-600 mt-2">{description}</p>
-    </div>
-  </div>
-);
-
-const FaqItem = ({ question, answer }: FaqItemProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border-b border-gray-200 py-7">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center text-left text-xl font-medium text-gray-800 hover:text-[#6991B4]"
-      >
-        <span>{question}</span>
-        <ChevronDown
-          className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
-        />
-      </button>
-      {isOpen && <p className="mt-5 text-gray-600">{answer}</p>}
-    </div>
-  );
-};
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
