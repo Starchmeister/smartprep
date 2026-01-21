@@ -29,7 +29,7 @@ const TeachWithUsModal: FC<TeachWithUsModalProps> = ({ isOpen, onClose }) => {
           <h3 className="text-2xl font-bold text-gray-800 mb-8">Sign up as</h3>
           <div className="flex flex-col gap-5 w-full max-w-[200px]">
             <a
-              href="https://secure.tutorcruncher.com/smartprep/signup/tutor/"
+              href="https://secure.tutorcruncher.com/smartprep-cape-town-tutors/signup/tutor/"
               className="w-full"
             >
               <button className="w-full py-3 border-2 border-[#254465] text-[#254465] rounded-full font-semibold hover:bg-[#254465] hover:text-white transition-colors duration-300">
@@ -37,7 +37,7 @@ const TeachWithUsModal: FC<TeachWithUsModalProps> = ({ isOpen, onClose }) => {
               </button>
             </a>
             <a
-              href="https://secure.tutorcruncher.com/smartprep/signup/tutor/"
+              href="https://forms.gle/2WtzXwXs8QnngDk38"
               className="w-full"
             >
               <button className="w-full py-3 border-2 border-[#254465] text-[#254465] rounded-full font-semibold hover:bg-[#254465] hover:text-white transition-colors duration-300">
